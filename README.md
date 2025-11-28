@@ -8,18 +8,7 @@ This trainer focus on any biomolecules-biomolecules interface (protein-protein, 
 # How to select the interface of interest? 
 
 First, the code will ask you which interface you want it train on, bellow are exemples of three different interfaces. Between PROA (a toxin)-GLIZ (a Gt1b molecule), PROA-PROD (synaptotagmin 1) and PROD-GLIZ. The user will see all available interfaces and select them as he wish. 
-
- ULTIMATE SCIENTIFIC PROTEIN STABILITY PREDICTOR
-======================================================================
- TEMPORAL INTERLEAVING + MULTI-RUN STATISTICAL VALIDATION
-======================================================================
-  ULTIMATE CONFIG: max_frames=430, step=2, epochs=80
-  STATISTICAL RIGOR: 10 trials with temporal interleaving
- INITIATING ULTIMATE SCIENTIFIC ANALYSIS...
-=================================================================
- ULTIMATE METHOD: Temporal Interleaving + Pure Variance Analysis
- OBJECTIVE: Maximum scientific rigor with MD trajectory optimization
-=================================================================
+Exemple of prompt:
  COMPREHENSIVE PROTEIN SEGMENT ANALYSIS:
    1. GLIZ (303 atoms)
    2. PROA (2227 atoms)
