@@ -23,16 +23,16 @@ Exemple of prompt:
 
 # Training Output & Analysis
 
-. R² score: Coefficient of determination for regression accuracy.
-. Spearman Correlation: Rank-based correlation for orfinal relationships
-. Mean Absolute Error (MAE): Absolute prediction errors
-. Root mean Square Error (RMSE): Emphasis on larger errors
-. Within-Tolerance Accuracy: Percentage within 10%, 15%, 20% error margins.
+- R² score: Coefficient of determination for regression accuracy.
+- Spearman Correlation: Rank-based correlation for orfinal relationships
+- Mean Absolute Error (MAE): Absolute prediction errors
+- Root mean Square Error (RMSE): Emphasis on larger errors
+- Within-Tolerance Accuracy: Percentage within 10%, 15%, 20% error margins.
 
 # Visualization Features
 
-. Box plots (ready for publication): Distribution of performance across training runs
-. Training Convergence: Learning curves with condifence intervals
-. Statistical Summaries: Comprehensive performance reporting
-. Interface Analysis: Focused visualization on target interfaces 
+- Box plots (ready for publication): Distribution of performance across training runs
+- Training Convergence: Learning curves with condifence intervals
+- Statistical Summaries: Comprehensive performance reporting
+- Interface Analysis: Focused visualization on target interfaces 
 
