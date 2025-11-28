@@ -736,7 +736,7 @@ def plot_ultimate_analysis(metrics, all_histories, focus_pairs):
 # ============================================================
 
 if __name__ == "__main__":
-    data_path = "/content/drive/MyDrive/syt1.pt"
+    data_path = "/content/drive/MyDrive/syt1.pt" # Indicate the correct path for your file, for exemple, here a google drive path for syt1.pt
 
     print(" INITIATING ULTIMATE SCIENTIFIC ANALYSIS...")
     print("=" * 65)
@@ -786,3 +786,4 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
     print(f" Ultimate Features: Temporal Interleaving + Multi-run Validation + Statistical Significance!")
+
