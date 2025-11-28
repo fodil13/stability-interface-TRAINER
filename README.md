@@ -85,7 +85,7 @@ It depends on your graphs, 4xxx nodes graphs can run on google colab (free versi
 
 Please, read LICENSE.txt
 
-#Contact
+# Contact
 
 Fodil Azzaz
 
