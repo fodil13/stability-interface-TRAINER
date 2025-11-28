@@ -14,12 +14,12 @@ Exemple of prompt:
    2. PROA (2227 atoms)
    3. PROD (895 atoms)
 
- ULTIMATE INTERFACE SELECTION:
-   Which interfaces are thermodynamically important?
-   Format: '1-2,1-3' or 'all' or 'auto'
-   Your scientific selection: all
-   Selected: all
-    Comprehensive: 3 interface pairs
+
+ -  Which interfaces are thermodynamically important?
+ -  Format: '1-2,1-3' or 'all' or 'auto'
+ -  Your scientific selection: all
+ -  Selected: all
+ -  Comprehensive: 3 interface pairs
 
 # Training Output & Analysis
 
