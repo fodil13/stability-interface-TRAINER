@@ -1,4 +1,4 @@
-# @title  ULTIMATE SCIENTIFIC PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
+# @title TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -784,4 +784,5 @@ if __name__ == "__main__":
     print(f"\n ULTIMATE MODEL ARCHIVED WITH MAXIMUM SCIENTIFIC RIGOR!")
     print(f" Final Performance: R² = {mean_r2:.3f} ± {std_r2:.3f}")
     print(f" Pure Model Variance: {std_r2**2:.6f}")
+
     print(f" Ultimate Features: Temporal Interleaving + Multi-run Validation + Statistical Significance!")
