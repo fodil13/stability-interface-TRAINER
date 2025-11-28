@@ -83,7 +83,15 @@ It depends on your graphs, 4xxx nodes graphs can run on google colab (free versi
 
 # License
 
-Please, read LICENSE.txt
+Please, read LICENSE.txt for complete terms.
+
+Summary:
+
+✅ Academic Use: Free for research and education
+
+🚫 Commercial Use: Requires authorization
+
+📧 Contact: azzaz.fodil@gmail.com for commercial licensing
 
 # Contact
 
