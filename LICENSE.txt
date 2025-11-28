@@ -1,0 +1,26 @@
+MOLECULAR DYNAMICS GRAPH CONVERTER (compatible with classic GNNs and EquiformerV2)
+Copyright (c) 2025 Fodil Azzaz, PhD
+
+ACADEMIC LICENSE
+================
+✅PERMITTED:
+- Academic research and teaching
+- Non-commercial scientific use
+- Integration into research pipelines
+- Publication using this software
+
+ COMMERCIAL USE:
+- Integration into commercial products/SaaS: 🚫 REQUIRES LICENSE  
+- For-profit company internal use: 🚫 REQUIRES LICENSE
+- Uncertain? Email: azzaz.fodil@gmail.com
+
+CITATION:
+If you use this software in your research, please cite:
+[ Coming Soon]
+
+COMMERCIAL LICENSING:
+For commercial licensing inquiries, contact: azzaz.fodil@gmail.com
+
+
+
+
