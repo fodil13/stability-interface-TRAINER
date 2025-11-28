@@ -1,2 +1,49 @@
-# stability-interface-TRAINER
-GNN Training framework for protein interface stability prediction from molecular dynamics trajectories
+# Stability-Interface Trainer
+Scientific Training Framework for Protein Interface Stability Prediction Using Graph Neural Networks and Molecular Dynamics
+
+The **Stability-Interface Trainer** is a sophisticated machine learning framework specifically designed for training Graph Neural Networks (GNNs) to predict protein interface stability from molecular dynamics trajectories/simulatios. 
+
+This trainer focus on any biomolecules-biomolecules interface (protein-protein, protein-lipid, sugar-protein, etc...), employing statistical validation and temporal splitting methods to ensure scientifically rigorous model training. In this current code version, the trajectory is split in three, and it can be more or less. 
+
+# How to select the interface of interest? 
+
+First, the code will ask you which interface you want it train on, bellow are exemples of three different interfaces. Between PROA (a toxin)-GLIZ (a Gt1b molecule), PROA-PROD (synaptotagmin 1) and PROD-GLIZ. The user will see all available interfaces and select them as he wish. 
+
+ ULTIMATE SCIENTIFIC PROTEIN STABILITY PREDICTOR
+======================================================================
+ TEMPORAL INTERLEAVING + MULTI-RUN STATISTICAL VALIDATION
+======================================================================
+  ULTIMATE CONFIG: max_frames=430, step=2, epochs=80
+  STATISTICAL RIGOR: 10 trials with temporal interleaving
+ INITIATING ULTIMATE SCIENTIFIC ANALYSIS...
+=================================================================
+ ULTIMATE METHOD: Temporal Interleaving + Pure Variance Analysis
+ OBJECTIVE: Maximum scientific rigor with MD trajectory optimization
+=================================================================
+ COMPREHENSIVE PROTEIN SEGMENT ANALYSIS:
+   1. GLIZ (303 atoms)
+   2. PROA (2227 atoms)
+   3. PROD (895 atoms)
+
+ ULTIMATE INTERFACE SELECTION:
+   Which interfaces are thermodynamically important?
+   Format: '1-2,1-3' or 'all' or 'auto'
+   Your scientific selection: all
+   Selected: all
+    Comprehensive: 3 interface pairs
+
+# Training Output & Analysis
+
+. R² score: Coefficient of determination for regression accuracy.
+. Spearman Correlation: Rank-based correlation for orfinal relationships
+. Mean Absolute Error (MAE): Absolute prediction errors
+. Root mean Square Error (RMSE): Emphasis on larger errors
+. Within-Tolerance Accuracy: Percentage within 10%, 15%, 20% error margins.
+
+# Visualization Features
+
+. Box plots (ready for publication): Distribution of performance across training runs
+. Training Convergence: Learning curves with condifence intervals
+. Statistical Summaries: Comprehensive performance reporting
+. Interface Analysis: Focused visualization on target interfaces 
+
