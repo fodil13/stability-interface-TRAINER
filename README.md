@@ -1,5 +1,5 @@
 # Stability-Interface Trainer
-Scientific Training Framework for Protein Interface Stability Prediction Using Graph Neural Networks and Molecular Dynamics
+Scientific Training Framework for Protein (or any other biomolecules) Interface Stability Prediction Using Graph Neural Networks and Molecular Dynamics
 
 The **Stability-Interface Trainer** is a sophisticated machine learning framework specifically designed for training Graph Neural Networks (GNNs) to predict protein interface stability from molecular dynamics trajectories/simulatios. 
 
