@@ -1,4 +1,19 @@
-# @title TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
+# @title TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING, created by Fodil Azzaz, PhD
+
+"""
+RAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
+Copyright (c) 2025 Fodil Azzaz, PhD - All Rights Reserved
+Non-commercial use only
+
+Converts MD simulation frames into EquiformerV2-compatible graphs
+with 13D scalar features and non-covalent edge detection.
+
+Original Methodology:
+- 13-dimensional feature engineering for biomolecules
+- Non-covalent edge detection with KD-tree optimization  
+- Radial basis functions for edge features
+- Google Colab-optimized pipeline
+"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -786,5 +801,6 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
