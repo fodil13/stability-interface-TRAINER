@@ -7,7 +7,7 @@ This trainer focus on any biomolecules-biomolecules interface (protein-protein, 
 
 # How to select the interface of interest? 
 
-First, the code will ask you which interface you want it train on, bellow are exemples of three different interfaces. Between PROA (a toxin)-GLIZ (a Gt1b molecule), PROA-PROD (synaptotagmin 1) and PROD-GLIZ. The user will see all available interfaces and select them as he wish. 
+First, the code will ask you which interface you want it to train on, bellow are exemples of three different interfaces. Between PROA (a toxin)-GLIZ (a Gt1b molecule), PROA-PROD (synaptotagmin 1) and PROD-GLIZ. The user will see all available interfaces and select them as he wish. 
 Exemple of prompt:
  COMPREHENSIVE PROTEIN SEGMENT ANALYSIS:
    1. GLIZ (303 atoms)
