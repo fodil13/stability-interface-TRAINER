@@ -1,4 +1,4 @@
-Stability interface trainer (compatible with classic GNNs and EquiformerV2)
+Stability interface trainer 
 Copyright (c) 2025 Fodil Azzaz, PhD
 
 ACADEMIC LICENSE
@@ -20,6 +20,7 @@ If you use this software in your research, please cite:
 
 COMMERCIAL LICENSING:
 For commercial licensing inquiries, contact: azzaz.fodil@gmail.com
+
 
 
 
