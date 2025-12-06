@@ -4,7 +4,7 @@
 TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
 Copyright (c) 2025 Fodil Azzaz, PhD - All Rights Reserved
 Non-commercial use only
-
+Commercial? Contact me: azzaz.fodil@gmail.com
 Converts MD simulation frames into EquiformerV2-compatible graphs
 with 13D scalar features and non-covalent edge detection.
 
@@ -801,6 +801,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
