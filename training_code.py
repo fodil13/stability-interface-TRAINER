@@ -26,7 +26,7 @@ from scipy.spatial import cKDTree
 import seaborn as sns
 from sklearn.utils import resample
 
-print(" ULTIMATE SCIENTIFIC PROTEIN STABILITY PREDICTOR")
+print(" SCIENTIFIC PROTEIN STABILITY PREDICTOR")
 print("=" * 70)
 print(" TEMPORAL INTERLEAVING + MULTI-RUN STATISTICAL VALIDATION")
 print("=" * 70)
@@ -47,11 +47,11 @@ np.random.seed(SEED)
 random.seed(SEED)
 torch.backends.cudnn.deterministic = True
 
-print(f"  ULTIMATE CONFIG: max_frames={MAX_FRAMES}, step={STEP}, epochs={TRAIN_EPOCHS}")
+print(f"  CONFIG: max_frames={MAX_FRAMES}, step={STEP}, epochs={TRAIN_EPOCHS}")
 print(f"  STATISTICAL RIGOR: {N_TRIALS} trials with temporal interleaving")
 
 # ============================================================
-# ULTIMATE SCIENTIFIC UTILITY FUNCTIONS
+# SCIENTIFIC UTILITY FUNCTIONS
 # ============================================================
 
 def convert_to_float32(graph):
@@ -66,7 +66,7 @@ def convert_to_float32(graph):
     return graph
 
 def create_consistent_temporal_splits(graphs):
-    """🟢 ULTIMATE SPLITTING: Temporal interleaving for MD trajectories"""
+    """ SPLITTING: Temporal interleaving for MD trajectories"""
     selected_graphs = graphs[:MAX_FRAMES:STEP]
     n_total = len(selected_graphs)
 
@@ -156,7 +156,7 @@ def calculate_confidence_intervals(data, confidence=0.95):
     return lower, upper
 
 # ============================================================
-# ULTIMATE INTERACTIVE SETUP
+#        INTERACTIVE SETUP
 # ============================================================
 
 def ultimate_interactive_setup(graphs):
@@ -205,7 +205,7 @@ def parse_ultimate_input(user_input, segments):
             a_idx, b_idx = map(int, pair_str.strip().split('-'))
             if 1 <= a_idx <= len(segments) and 1 <= b_idx <= len(segments):
                 pairs.append((segments[a_idx-1], segments[b_idx-1]))
-                print(f"   ✅ Interface: {segments[a_idx-1]}-{segments[b_idx-1]}")
+                print(f"    Interface: {segments[a_idx-1]}-{segments[b_idx-1]}")
             else:
                 print(f"   ⚠️  Invalid indices: {pair_str}")
         except:
@@ -214,7 +214,7 @@ def parse_ultimate_input(user_input, segments):
     return pairs
 
 # ============================================================
-# ULTIMATE SCIENTIFIC MODEL ARCHITECTURE
+#        SCIENTIFIC MODEL ARCHITECTURE
 # ============================================================
 
 class UltimateStabilityPredictor(nn.Module):
@@ -300,7 +300,7 @@ class UltimateStabilityPredictor(nn.Module):
         return interface_mask
 
 # ============================================================
-# ULTIMATE TARGET GENERATION
+#        TARGET GENERATION
 # ============================================================
 
 def create_ultimate_targets(graphs, frame_indices, focus_pairs):
@@ -392,7 +392,7 @@ def count_cross_segment_interactions(graph, focus_pairs):
     return int(count)
 
 # ============================================================
-# ULTIMATE TRAINING PROTOCOL
+#        TRAINING PROTOCOL
 # ============================================================
 
 def run_ultimate_training(data_path, focus_pairs, run_seed=None):
@@ -492,7 +492,7 @@ def run_ultimate_training(data_path, focus_pairs, run_seed=None):
     return model, test_metrics, best_val_loss, training_history
 
 # ============================================================
-#  ULTIMATE STATISTICAL ANALYSIS
+#         STATISTICAL ANALYSIS
 # ============================================================
 
 def run_ultimate_trials(data_path, focus_pairs, n_runs=10):
@@ -801,6 +801,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
