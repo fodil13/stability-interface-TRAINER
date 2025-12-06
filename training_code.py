@@ -1,7 +1,7 @@
 # @title TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING, created by Fodil Azzaz, PhD
 
 """
-RAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
+TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
 Copyright (c) 2025 Fodil Azzaz, PhD - All Rights Reserved
 Non-commercial use only
 
@@ -801,6 +801,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
