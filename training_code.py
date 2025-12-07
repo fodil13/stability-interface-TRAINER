@@ -611,85 +611,103 @@ def perform_ultimate_analysis(all_results, focus_pairs):
     return best_run, metrics
 
 def plot_ultimate_analysis(metrics, all_histories, focus_pairs):
-    """ULTIMATE visualization with box plots and histograms"""
+    """ULTIMATE visualization with box plots and histograms - ENHANCED VISIBILITY"""
     plt.style.use('seaborn-v0_8-whitegrid')
-    fig = plt.figure(figsize=(20, 16))
+    fig = plt.figure(figsize=(22, 18))  # Increased size for better visibility
 
-    # Plot 1: BOITE À MOUSTACHE - R² distribution
+    # Set global font sizes
+    TITLE_FONT = 16
+    AXIS_FONT = 14
+    TICK_FONT = 12
+    STATS_FONT = 11
+
+    # Plot 1: BOX PLOT - R² distribution
     ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=2)
     r2_scores = metrics['Test R²']
 
-    #  BOX PLOT with proper styling
+    # BOX PLOT with enhanced styling
     box_plot = ax1.boxplot(r2_scores, patch_artist=True,
-                          boxprops=dict(facecolor='lightblue', alpha=0.7),
-                          medianprops=dict(color='red', linewidth=2),
-                          whiskerprops=dict(color='black', linestyle='--'),
-                          capprops=dict(color='black'),
-                          flierprops=dict(marker='o', color='red', alpha=0.5))
+                          boxprops=dict(facecolor='lightblue', alpha=0.8, linewidth=2),
+                          medianprops=dict(color='red', linewidth=3),
+                          whiskerprops=dict(color='black', linestyle='--', linewidth=2),
+                          capprops=dict(color='black', linewidth=2),
+                          flierprops=dict(marker='o', color='red', alpha=0.7, markersize=8))
 
     # Add individual points with jitter
     x_jitter = np.random.normal(1, 0.08, size=len(r2_scores))
-    ax1.scatter(x_jitter, r2_scores, alpha=0.6, color='blue', s=60, zorder=10)
+    ax1.scatter(x_jitter, r2_scores, alpha=0.7, color='blue', s=80, zorder=10, edgecolors='black')
 
-    ax1.set_title('Distribution des Performances R²\n(Box Plot - 10 essais)',
-                 fontsize=14, fontweight='bold')
-    ax1.set_ylabel('Score R²', fontsize=12)
+    ax1.set_title('R² Performance Distribution\n(Box Plot - 10 Trials)',
+                 fontsize=TITLE_FONT, fontweight='bold', pad=20)
+    ax1.set_ylabel('R² Score', fontsize=AXIS_FONT, fontweight='bold')
     ax1.set_xticks([1])
-    ax1.set_xticklabels(['R²'])
-    ax1.grid(True, alpha=0.3)
+    ax1.set_xticklabels(['R²'], fontsize=AXIS_FONT)
+    ax1.tick_params(axis='both', which='major', labelsize=TICK_FONT)
+    ax1.grid(True, alpha=0.4)
 
-    # Add statistical annotations
+    # Enhanced statistical annotations
     mean_r2 = np.mean(r2_scores)
     std_r2 = np.std(r2_scores)
-    ax1.text(0.7, 0.9, f'Moyenne: {mean_r2:.3f} ± {std_r2:.3f}',
-             transform=ax1.transAxes, fontsize=11,
-             bbox=dict(boxstyle="round,pad=0.3", facecolor="white"))
+    ax1.text(0.05, 0.95, f'Mean: {mean_r2:.3f} ± {std_r2:.3f}\nRange: {min(r2_scores):.3f} - {max(r2_scores):.3f}',
+             transform=ax1.transAxes, fontsize=STATS_FONT, fontweight='bold',
+             bbox=dict(boxstyle="round,pad=0.5", facecolor="white", edgecolor='black'),
+             verticalalignment='top')
 
     # Plot 2: HISTOGRAM - R² distribution
     ax2 = plt.subplot2grid((3, 3), (0, 2))
-    ax2.hist(r2_scores, bins=8, alpha=0.7, color='lightgreen',
-             edgecolor='black', linewidth=1.2)
-    ax2.axvline(mean_r2, color='red', linestyle='--', linewidth=2,
-                label=f'Moyenne: {mean_r2:.3f}')
-    ax2.set_xlabel('Score R²')
-    ax2.set_ylabel('Fréquence')
-    ax2.set_title('Histogramme des Performances R²', fontsize=12, fontweight='bold')
-    ax2.legend()
-    ax2.grid(True, alpha=0.3)
+    ax2.hist(r2_scores, bins=8, alpha=0.8, color='lightgreen',
+             edgecolor='black', linewidth=2)
+    ax2.axvline(mean_r2, color='red', linestyle='--', linewidth=3,
+                label=f'Mean: {mean_r2:.3f}')
+    ax2.set_xlabel('R² Score', fontsize=AXIS_FONT, fontweight='bold')
+    ax2.set_ylabel('Frequency', fontsize=AXIS_FONT, fontweight='bold')
+    ax2.set_title('R² Performance Histogram', fontsize=TITLE_FONT, fontweight='bold', pad=15)
+    ax2.legend(fontsize=STATS_FONT)
+    ax2.tick_params(axis='both', which='major', labelsize=TICK_FONT)
+    ax2.grid(True, alpha=0.4)
 
-    # Plot 3: BOITE À MOUSTACHE - Spearman correlation
+    # Plot 3: BOX PLOT - Spearman correlation
     ax3 = plt.subplot2grid((3, 3), (1, 0), colspan=2)
     spearman_scores = metrics['Test Spearman']
 
     box_plot = ax3.boxplot(spearman_scores, patch_artist=True,
-                          boxprops=dict(facecolor='lightcoral', alpha=0.7),
-                          medianprops=dict(color='darkred', linewidth=2),
-                          whiskerprops=dict(color='black', linestyle='--'))
+                          boxprops=dict(facecolor='lightcoral', alpha=0.8, linewidth=2),
+                          medianprops=dict(color='darkred', linewidth=3),
+                          whiskerprops=dict(color='black', linestyle='--', linewidth=2))
 
     x_jitter = np.random.normal(1, 0.08, size=len(spearman_scores))
-    ax3.scatter(x_jitter, spearman_scores, alpha=0.6, color='darkred', s=60, zorder=10)
+    ax3.scatter(x_jitter, spearman_scores, alpha=0.7, color='darkred', s=80, zorder=10, edgecolors='black')
 
-    ax3.set_title('Distribution des Corrélations de Spearman\n(Box Plot)',
-                 fontsize=14, fontweight='bold')
-    ax3.set_ylabel('ρ de Spearman', fontsize=12)
+    ax3.set_title('Spearman Correlation Distribution\n(Box Plot)',
+                 fontsize=TITLE_FONT, fontweight='bold', pad=20)
+    ax3.set_ylabel('Spearman ρ', fontsize=AXIS_FONT, fontweight='bold')
     ax3.set_xticks([1])
-    ax3.set_xticklabels(['Spearman'])
-    ax3.grid(True, alpha=0.3)
+    ax3.set_xticklabels(['Spearman'], fontsize=AXIS_FONT)
+    ax3.tick_params(axis='both', which='major', labelsize=TICK_FONT)
+    ax3.grid(True, alpha=0.4)
+
+    # Enhanced annotations for Spearman
+    mean_spearman = np.mean(spearman_scores)
+    std_spearman = np.std(spearman_scores)
+    ax3.text(0.05, 0.95, f'Mean: {mean_spearman:.3f} ± {std_spearman:.3f}\nRange: {min(spearman_scores):.3f} - {max(spearman_scores):.3f}',
+             transform=ax3.transAxes, fontsize=STATS_FONT, fontweight='bold',
+             bbox=dict(boxstyle="round,pad=0.5", facecolor="white", edgecolor='black'),
+             verticalalignment='top')
 
     # Plot 4: HISTOGRAM - Spearman distribution
     ax4 = plt.subplot2grid((3, 3), (1, 2))
-    ax4.hist(spearman_scores, bins=8, alpha=0.7, color='orange',
-             edgecolor='black', linewidth=1.2)
-    mean_spearman = np.mean(spearman_scores)
-    ax4.axvline(mean_spearman, color='red', linestyle='--', linewidth=2,
-                label=f'Moyenne: {mean_spearman:.3f}')
-    ax4.set_xlabel('ρ de Spearman')
-    ax4.set_ylabel('Fréquence')
-    ax4.set_title('Histogramme des Corrélations', fontsize=12, fontweight='bold')
-    ax4.legend()
-    ax4.grid(True, alpha=0.3)
+    ax4.hist(spearman_scores, bins=8, alpha=0.8, color='orange',
+             edgecolor='black', linewidth=2)
+    ax4.axvline(mean_spearman, color='red', linestyle='--', linewidth=3,
+                label=f'Mean: {mean_spearman:.3f}')
+    ax4.set_xlabel('Spearman ρ', fontsize=AXIS_FONT, fontweight='bold')
+    ax4.set_ylabel('Frequency', fontsize=AXIS_FONT, fontweight='bold')
+    ax4.set_title('Correlation Histogram', fontsize=TITLE_FONT, fontweight='bold', pad=15)
+    ax4.legend(fontsize=STATS_FONT)
+    ax4.tick_params(axis='both', which='major', labelsize=TICK_FONT)
+    ax4.grid(True, alpha=0.4)
 
-    # Plot 5: Training convergence across trials
+    # Plot 5: Training convergence across trials - ENHANCED
     ax5 = plt.subplot2grid((3, 3), (2, 0), colspan=2)
 
     # Calculate mean convergence with confidence intervals
@@ -707,20 +725,21 @@ def plot_ultimate_analysis(metrics, all_histories, focus_pairs):
             std_val_r2.append(np.std(epoch_values))
 
     epochs_range = range(len(mean_val_r2))
-    ax5.plot(epochs_range, mean_val_r2, 'b-', linewidth=2, label='Moyenne R² Validation')
+    ax5.plot(epochs_range, mean_val_r2, 'b-', linewidth=3, label='Mean Validation R²')
     ax5.fill_between(epochs_range,
                     np.array(mean_val_r2) - np.array(std_val_r2),
                     np.array(mean_val_r2) + np.array(std_val_r2),
-                    alpha=0.2, color='blue', label='±1 Écart-type')
+                    alpha=0.3, color='blue', label='±1 Standard Deviation')
 
-    ax5.set_xlabel('Époque')
-    ax5.set_ylabel('R² de Validation')
-    ax5.set_title('Convergence de l\'Entraînement\n(Moyenne ± Écart-type)',
-                 fontsize=14, fontweight='bold')
-    ax5.legend()
-    ax5.grid(True, alpha=0.3)
+    ax5.set_xlabel('Epoch', fontsize=AXIS_FONT, fontweight='bold')
+    ax5.set_ylabel('Validation R²', fontsize=AXIS_FONT, fontweight='bold')
+    ax5.set_title('Training Convergence\n(Mean ± Standard Deviation)',
+                 fontsize=TITLE_FONT, fontweight='bold', pad=15)
+    ax5.legend(fontsize=STATS_FONT)
+    ax5.tick_params(axis='both', which='major', labelsize=TICK_FONT)
+    ax5.grid(True, alpha=0.4)
 
-    # Plot 6: Statistical summary
+    # Plot 6: Statistical summary - ENHANCED READABILITY
     ax6 = plt.subplot2grid((3, 3), (2, 2))
     ax6.axis('off')
 
@@ -731,33 +750,37 @@ def plot_ultimate_analysis(metrics, all_histories, focus_pairs):
     ci_lower_spearman, ci_upper_spearman = calculate_confidence_intervals(spearman_scores)
 
     summary_text = f"""
-    RÉSULTATS STATISTIQUES ULTIMES
-    ==============================
+    STATISTICAL RESULTS SUMMARY
+    {'=' * 30}
 
-    PERFORMANCE (n=10):
+    PERFORMANCE (n=N_TRIALS):
     • R²: {mean_r2:.3f} ± {std_r2:.3f}
-    • 95% IC: [{ci_lower_r2:.3f}, {ci_upper_r2:.3f}]
-    • Spearman: {mean_spearman:.3f} ± {np.std(spearman_scores):.3f}
-    • 95% IC: [{ci_lower_spearman:.3f}, {ci_upper_spearman:.3f}]
+    • 95% CI: [{ci_lower_r2:.3f}, {ci_upper_r2:.3f}]
+    • Spearman ρ: {mean_spearman:.3f} ± {np.std(spearman_scores):.3f}
+    • 95% CI: [{ci_lower_spearman:.3f}, {ci_upper_spearman:.3f}]
 
-    INTERFACES ANALYSÉES:
+    ANALYZED INTERFACES:
     {focus_text}
 
-    RIGUEUR SCIENTIFIQUE:
-    • Variance pure: {std_r2**2:.6f}
-    • Intervalles de confiance
-    • 10 essais indépendants
-    • Split temporel cohérent
+    SCIENTIFIC RIGOR:
+    • Pure Variance: {std_r2**2:.6f}
+    • Confidence Intervals
+    • 10 Independent Trials
+    • Consistent Temporal Splitting
+    • Early Stopping Validation
     """
 
-    ax6.text(0.05, 0.95, summary_text, transform=ax6.transAxes, fontsize=10,
-             verticalalignment='top', bbox=dict(boxstyle="round,pad=1", facecolor="lightyellow"),
-             fontfamily='monospace')
+    ax6.text(0.05, 0.95, summary_text, transform=ax6.transAxes, fontsize=STATS_FONT,
+             verticalalignment='top', linespacing=1.5,
+             bbox=dict(boxstyle="round,pad=1", facecolor="lightyellow",
+                      edgecolor='black', linewidth=2),
+             fontfamily='monospace', fontweight='bold')
 
-    plt.tight_layout()
+    plt.tight_layout(pad=3.0)  # Increased padding between subplots
     plt.show()
 
     return mean_r2, std_r2
+
 # ============================================================
 # EXECUTE ULTIMATE ANALYSIS
 # ============================================================
@@ -813,6 +836,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
