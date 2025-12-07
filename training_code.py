@@ -495,7 +495,7 @@ def run_ultimate_training(data_path, focus_pairs, run_seed=None):
 #         STATISTICAL ANALYSIS
 # ============================================================
 
-def run_ultimate_trials(data_path, focus_pairs, n_runs=10):
+def run_ultimate_trials(data_path, focus_pairs, n_runs=N_TRIALS):
     """Ultimate trials with temporal interleaving and pure variance analysis"""
     print(f" EXECUTING {n_runs} ULTIMATE STATISTICAL TRIALS")
     print(" PURE MODEL VARIANCE + TEMPORAL INTERLEAVING")
@@ -767,7 +767,7 @@ if __name__ == "__main__":
     focus_pairs, unique_segments = ultimate_interactive_setup(all_graphs)
 
     # Run ultimate trials
-    all_results, all_histories = run_ultimate_trials(data_path, focus_pairs, n_runs=10)
+    all_results, all_histories = run_ultimate_trials(data_path, focus_pairs, n_runs=N_TRIALS)
 
     # Ultimate statistical analysis
     best_run, metrics = perform_ultimate_analysis(all_results, focus_pairs)
@@ -801,6 +801,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
