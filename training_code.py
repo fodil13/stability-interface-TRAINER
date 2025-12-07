@@ -40,7 +40,19 @@ STEP =              # Frame skipping
 TRAIN_EPOCHS =      # Training epochs
 SEED =              # Base reproducibility seed
 N_TRIALS =          # Number of statistical trials
-CONFIDENCE_LEVEL = 
+CONFIDENCE_LEVEL = 0.95
+
+# Model and analysis constants
+NUM_SAMPLE_EDGES = 2000     # For edge sampling
+INTERFACE_DISTANCE = 8.0    # Maximum interface detection distance (Å)
+CONTACT_THRESHOLD = 6.0     # Close contact threshold (Å)
+DROPOUT_RATE = 0.3          # Model dropout
+LEARNING_RATE = 0.001       # Optimizer learning rate
+WEIGHT_DECAY = 1e-4         # L2 regularization
+SCHEDULER_PATIENCE = 10     # LR scheduler patience
+SCHEDULER_FACTOR = 0.5      # LR reduction factor
+GRAD_CLIP_NORM = 1.0        # Gradient clipping
+EARLY_STOP_PATIENCE = 15    # Early stopping patience
 
 torch.manual_seed(SEED)
 np.random.seed(SEED)
@@ -801,6 +813,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
