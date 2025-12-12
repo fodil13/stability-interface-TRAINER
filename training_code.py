@@ -32,7 +32,7 @@ print(" TEMPORAL INTERLEAVING + MULTI-RUN STATISTICAL VALIDATION")
 print("=" * 70)
 
 # ============================================================
-#  ULTIMATE SCIENTIFIC CONFIGURATION
+# CONFIGURATION
 # ============================================================
 
 MAX_FRAMES =        # Maximum frames to use
@@ -836,6 +836,7 @@ if __name__ == "__main__":
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
