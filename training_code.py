@@ -32,7 +32,7 @@ print(" TEMPORAL INTERLEAVING + MULTI-RUN STATISTICAL VALIDATION")
 print("=" * 70)
 
 # ============================================================
-# CONFIGURATION
+#                     CONFIGURATION
 # ============================================================
 
 MAX_FRAMES =        # Maximum frames to use
@@ -63,7 +63,7 @@ print(f"  CONFIG: max_frames={MAX_FRAMES}, step={STEP}, epochs={TRAIN_EPOCHS}")
 print(f"  STATISTICAL RIGOR: {N_TRIALS} trials with temporal interleaving")
 
 # ============================================================
-# SCIENTIFIC UTILITY FUNCTIONS
+#                  UTILITY FUNCTIONS
 # ============================================================
 
 def convert_to_float32(graph):
@@ -168,7 +168,7 @@ def calculate_confidence_intervals(data, confidence=0.95):
     return lower, upper
 
 # ============================================================
-#        INTERACTIVE SETUP
+#                INTERACTIVE SETUP
 # ============================================================
 
 def ultimate_interactive_setup(graphs):
@@ -226,7 +226,7 @@ def parse_ultimate_input(user_input, segments):
     return pairs
 
 # ============================================================
-#        SCIENTIFIC MODEL ARCHITECTURE
+#                     MODEL ARCHITECTURE
 # ============================================================
 
 class UltimateStabilityPredictor(nn.Module):
@@ -312,7 +312,7 @@ class UltimateStabilityPredictor(nn.Module):
         return interface_mask
 
 # ============================================================
-#        TARGET GENERATION
+#                TARGET GENERATION
 # ============================================================
 
 def create_ultimate_targets(graphs, frame_indices, focus_pairs):
@@ -404,7 +404,7 @@ def count_cross_segment_interactions(graph, focus_pairs):
     return int(count)
 
 # ============================================================
-#        TRAINING PROTOCOL
+#                    TRAINING PROTOCOL
 # ============================================================
 
 def run_ultimate_training(data_path, focus_pairs, run_seed=None):
@@ -504,7 +504,7 @@ def run_ultimate_training(data_path, focus_pairs, run_seed=None):
     return model, test_metrics, best_val_loss, training_history
 
 # ============================================================
-#         STATISTICAL ANALYSIS
+#                 STATISTICAL ANALYSIS
 # ============================================================
 
 def run_ultimate_trials(data_path, focus_pairs, n_runs=N_TRIALS):
@@ -782,7 +782,7 @@ def plot_ultimate_analysis(metrics, all_histories, focus_pairs):
     return mean_r2, std_r2
 
 # ============================================================
-# EXECUTE ULTIMATE ANALYSIS
+#                 EXECUTE ANALYSIS
 # ============================================================
 
 if __name__ == "__main__":
@@ -829,13 +829,14 @@ if __name__ == "__main__":
             'r2': calculate_confidence_intervals(metrics['Test R²']),
             'spearman': calculate_confidence_intervals(metrics['Test Spearman'])
         }
-    }, 'ULTIMATE_SCIENTIFIC_MODEL.pth')
+    }, 'MODEL.pth')
 
-    print(f"\n ULTIMATE MODEL ARCHIVED WITH MAXIMUM SCIENTIFIC RIGOR!")
+    print(f"\n MODEL ARCHIVED WITH MAXIMUM SCIENTIFIC RIGOR!")
     print(f" Final Performance: R² = {mean_r2:.3f} ± {std_r2:.3f}")
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
