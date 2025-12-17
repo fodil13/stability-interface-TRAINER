@@ -60,7 +60,7 @@ random.seed(SEED)
 torch.backends.cudnn.deterministic = True
 
 print(f"  CONFIG: max_frames={MAX_FRAMES}, step={STEP}, epochs={TRAIN_EPOCHS}")
-print(f"  STATISTICAL RIGOR: {N_TRIALS} trials with temporal interleaving")
+print(f"  STATISTIC: {N_TRIALS} trials with temporal interleaving")
 
 # ============================================================
 #                  UTILITY FUNCTIONS
@@ -762,7 +762,7 @@ def plot_ultimate_analysis(metrics, all_histories, focus_pairs):
     ANALYZED INTERFACES:
     {focus_text}
 
-    SCIENTIFIC RIGOR:
+    Statistic Summary:
     • Pure Variance: {std_r2**2:.6f}
     • Confidence Intervals
     • 10 Independent Trials
@@ -791,7 +791,6 @@ if __name__ == "__main__":
     print(" INITIATING ULTIMATE SCIENTIFIC ANALYSIS...")
     print("=" * 65)
     print(" ULTIMATE METHOD: Temporal Interleaving + Pure Variance Analysis")
-    print(" OBJECTIVE: Maximum scientific rigor with MD trajectory optimization")
     print("=" * 65)
 
     # Load and validate data
@@ -831,11 +830,11 @@ if __name__ == "__main__":
         }
     }, 'MODEL.pth')
 
-    print(f"\n MODEL ARCHIVED WITH MAXIMUM SCIENTIFIC RIGOR!")
     print(f" Final Performance: R² = {mean_r2:.3f} ± {std_r2:.3f}")
     print(f" Pure Model Variance: {std_r2**2:.6f}")
 
   
+
 
 
 
