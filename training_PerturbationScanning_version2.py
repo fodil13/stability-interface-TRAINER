@@ -1,4 +1,7 @@
 """
+
+TRAINING FOR PROTEIN STABILITY PREDICTOR WITH TEMPORAL INTERLEAVING
+Copyright (c) 2025 Fodil Azzaz, PhD
 Training script for protein interface stability predictor.
 Uses pre‑computed SASA scores stored in graph.sasa_score.
 Normalization is performed using training set only.
