@@ -287,7 +287,7 @@ if __name__ == "__main__":
     first_graphs = torch.load(data_paths[0], map_location='cpu', weights_only=False)
     first_graphs = [convert_to_float32(g) for g in first_graphs]
     if not hasattr(first_graphs[0], 'sasa_score'):
-        print("⚠️ Warning: graphs do not have 'sasa_score' attribute. Run graph creation with SASA first.")
+        print(" Warning: graphs do not have 'sasa_score' attribute. Run graph creation with SASA first.")
     focus_pairs = ultimate_interactive_setup(first_graphs)
 
     all_results = run_trials(data_paths, focus_pairs, n_runs=N_TRIALS)
